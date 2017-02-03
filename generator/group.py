@@ -18,7 +18,7 @@ except:
     sys.exit(2)
 
 n = 5
-f = "C:\Users\Rostik\Documents\Code\ironpython_training\data\groups.xlsx"
+f = "data\groups.xlsx"
 
 for o, a in opts:
     if o == "-n":
@@ -36,6 +36,15 @@ testdata = [Group(name="")] + [Group(name=random_string(15)) for i in range(n)]
 
 data_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", f)
 
+# Check that directory exists, create if False
+if not os.path.exists(os.path.dirname(data_file)):
+    os.makedirs(os.path.dirname(data_file))
+
+# Check that file exists, delete file if True
+if os.path.exists(data_file):
+    os.remove(data_file)
+
+
 excel = Excel.ApplicationClass()
 excel.Visible = True
 
@@ -45,7 +54,7 @@ sheet = workbook.ActiveSheet
 for i in range(len(testdata)):
     sheet.Range["A%s" % (i+1)].Value2 = testdata[i].name
 
-workbook.SaveAs(f)
+workbook.SaveAs(data_file)
 
 time.sleep(10)
 
