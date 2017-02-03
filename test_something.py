@@ -1,7 +1,6 @@
 
 def test_something_good():
-    assert 2+2 == 4
+    print("Hello, World!")
 
-def test_something_bad():
-    assert 2+2 == 5
-    
+#def test_something_bad():
+#    assert 2+2 == 5
