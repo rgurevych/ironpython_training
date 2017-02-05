@@ -8,8 +8,6 @@ clr.AddReferenceByName("TestStack.White")
 clr.AddReferenceByName("UIAutomationTypes, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")
 
 from TestStack.White import Application
-from TestStack.White.InputDevices import Keyboard
-from TestStack.White.WindowsAPI import KeyboardInput
 from TestStack.White.UIItems.Finders import *
 from System.Windows.Automation import *
 import pytest
