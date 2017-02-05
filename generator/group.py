@@ -32,7 +32,7 @@ def random_string(max_length):
     return re.sub('\s+', ' ', ("".join([random.choice(sym)
                                                  for i in range(random.randrange(max_length))]).rstrip()))
 
-testdata = [Group(name="")] + [Group(name=random_string(15)) for i in range(n)]
+testdata = [Group(name=random_string(15)) for i in range(n)]
 
 data_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", f)
 
@@ -56,6 +56,6 @@ for i in range(len(testdata)):
 
 workbook.SaveAs(data_file)
 
-time.sleep(10)
+time.sleep(5)
 
 excel.Quit()
